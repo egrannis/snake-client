@@ -19,8 +19,10 @@ const connect = function () {
 
   conn.on('connect', (connect) => {
     conn.write('Name: EEG');
+    // setTimeout(() => conn.write('Move: up'), 500);
+    // setTimeout(() => conn.write('Move: right'), 550);
   })
-  
+
   return conn;
 };
 
