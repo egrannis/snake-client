@@ -1,29 +1,27 @@
 // establishes a connection with the game server
 const net = require("net");
 
-const connect = function () {
+const connect = function() {
   const conn = net.createConnection({
     host: '165.227.47.243',
-    port: 50541 
+    port: 50541
   });
 
-  // interpret incoming data as text
-  conn.setEncoding("utf8");
+  conn.setEncoding("utf8"); // interpret incoming data as text
 
   conn.on("data", (data) => {
     console.log(data);
-  })
+  });
 
   conn.on("connect", (connect) => {
-  console.log("Successfully connected to game server");
-  })
+    console.log("Successfully connected to game server");
+  });
 
   conn.on('connect', (connect) => {
     conn.write('Name: EEG');
     // setTimeout(() => conn.write('Move: up'), 500);
     // setTimeout(() => conn.write('Move: right'), 550);
-  })
-
+  });
   return conn;
 };
 
