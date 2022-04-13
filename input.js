@@ -16,6 +16,15 @@ const handleUserInput = function(key, connection) {//does this go inside the set
   if (key === 'd') {
     connection.write('Move: right');
   }
+  if (key === 'g') {
+    connection.write('Say: Wassup');
+  }
+  if (key === 'h') {
+    connection.write('Say: Hiiiiiii');
+  }
+  if (key === 'j') {
+    connection.write('Say: Peace out');
+  }
 };
   
   
