@@ -5,13 +5,22 @@ const connect = function () {
     host: '165.227.47.243',
     port: 50541 
   });
-  conn.on("data", (data) => {
-    console.log(data)
-  })
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
+  conn.on("data", (data) => {
+    console.log(data);
+  })
+
+  conn.on("connect", (connect) => {
+  console.log("Successfully connected to game server");
+  })
+
+  conn.on('connect', (connect) => {
+    conn.write('Name: EEG');
+  })
+  
   return conn;
 };
 
